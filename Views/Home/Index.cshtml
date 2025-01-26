@@ -1,0 +1,64 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model Calculator_2ndAct_ITElective.Models.Calculator
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Calculate Semester Grade</title>
+    <link rel="stylesheet" href="~/css/site.css" />
+</head>
+<body>
+    <div class="calculator">
+        <h3 class="text-center">Calculate Semester Grade</h3>
+        @using (Html.BeginForm("CalculateSemGrade", "Home", FormMethod.Post))
+        {
+            <div class="form-group">
+                <label for="Prelim">Prelim</label>
+                @Html.TextBoxFor(model => model.prelim, new
+                    {
+                        @class = "form-control",
+                        placeholder = "Prelim Grade"
+                    }
+                         )
+            </div>
+            <div class="form-group">
+                <label for="Midterm">Midterm</label>
+                @Html.TextBoxFor(model => model.midterm, new
+                    {
+                        @class = "form-control",
+                        placeholder = "Midterm Grade"
+                    }
+                         )
+            </div>
+            <div class="form-group">
+                <label for="Finals">Finals</label>
+                @Html.TextBoxFor(model => model.finals, new
+                    {
+                        @class = "form-control",
+                        placeholder = "Finals Grade"
+                    }
+                         )
+            </div>
+            <button type="submit" class="btn">Calculate</button>
+
+            @if (Model.semGrade.HasValue)
+            {
+                <div class="result">
+                    <label for="Semester Grade">Semester Grade: </label>
+                    <div class="alert alert-info">@Model.semGrade.Value.ToString("F2")</div>
+                    <label for="Remarks">Remarks: </label>
+                    @if (Model.semGrade >= 75)
+                    {
+                        <div class="alert alert-success">PASSED</div>
+                    }
+                    else
+                    {
+                        <div class="alert alert-danger">FAILED</div>
+                    }
+                </div>
+            }
+        }
+    </div>
+</body>
+</html>

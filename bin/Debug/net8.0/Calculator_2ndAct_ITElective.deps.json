@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "Calculator_2ndAct_ITElective/1.0.0": {
+        "runtime": {
+          "Calculator_2ndAct_ITElective.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Calculator_2ndAct_ITElective/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

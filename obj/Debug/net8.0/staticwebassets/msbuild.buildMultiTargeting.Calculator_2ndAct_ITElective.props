@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Calculator_2ndAct_ITElective.props" />
+</Project>
